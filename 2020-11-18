@@ -1,0 +1,22 @@
+<오라클 한글 캐릭터셋 확인하기>
+
+SELECT *
+
+FROM NLS_DATABASE_PARAMETERS
+
+WHERE PARAMETER = 'NLS_CHARACTERSET'
+
+
+
+AL16UTF8 : 한글 2byte
+KO16KSC5601 :한글 완성형 2,350자지원 글자당 2Byte
+KO16MSWIN949: KO16KSC5601+확장 8822자 지원, 글자당 2Bytes
+UTF8: 한글 11,172자 글자당 3바이트
+AL32UTF8: 한글 11,172자 , 글자당 3byte이며 UTF8과 다른점은 내셔널 캐릭터셋으로 설정이 불가능합니다.
+
+
+
+
+참고자료.
+https://acua.tistory.com/entry/%EC%98%A4%EB%9D%BC%ED%81%B4-%ED%95%9C%EA%B8%80-3%EB%B0%94%EC%9D%B4%ED%8A%B8
+https://gompangyi.tistory.com/122
