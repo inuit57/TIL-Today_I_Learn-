@@ -17,7 +17,7 @@
 <c:set> 태그와 requestScope[ name ] 을 활용하면 가능하다. 
 
 
-JSTL - HTML 태그 적용하는 법
+# JSTL - HTML 태그 적용하는 법
 [자료참고](https://needjarvis.tistory.com/51)
 ```
 <c:out value="${ref_print}" escapeXml="false" />
