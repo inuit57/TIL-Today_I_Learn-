@@ -32,6 +32,8 @@ for(String str : strArr){
 - id 값이 key로 들어가고 value 값은 value로 자동으로 Map에 저장되어서 Controller에서 바로 사용할 수 있다. 
 
 - 단점으로는 어떤 key 값이 있는지 알기 위해서는 front에 지정한 id 값을 확인해야 하기에 유지보수가 귀찮아질 수 있다. 
-- vo 객체를 만드는 쪽이 좀더 권장되는 방법이다. 
+- Command Object 객체를 만들어서 사용하는 쪽이 좀더 권장되는 방법이다. <br>
+(* 받아오는 id(key)값과 동일한 이름의 변수들을 만든 Class를 변수로 지정하는 방법, <br>
+해당 Class에는 받아올 모든 값에 대한 변수가 지정되어야 하고 getter/setter가 있어야만 한다. 
 
 
