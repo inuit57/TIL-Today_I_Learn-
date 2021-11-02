@@ -6,7 +6,7 @@
 ## tar 명령어 옵션
 ```
 tar [OPTION...] [FILE]... 
--f : 결과물로 나올 아카이브 파일 이름을 지정 (기본 옵션) 
+-f : 결과물로 나올 아카이브 파일 이름을 지정 (필수 옵션) - 지정하지 않을 경우 tar파일이 생성되지 않는다. 
 -p : 파일 권한을 지정
 -v : 묶거나 푸는 과정을 화면에 출력
 -C : 경로를 지정
@@ -16,30 +16,22 @@ tar [OPTION...] [FILE]...
 
 -z : gzip 방식으로 압축하거나 해제함
 -j : bzip2 방식으로 압축하거나 해제함
+-J : xz 방식으로 압축하거나 해제함 
 ```
 
-## 압축하기
-### tar 압축
+## 정리
 ```
-$ tar -cvf [FILE_NAME.tar] [TARGET_FOLDER] 
+]# tar cvf [파일명] [묶을파일] = tar파일 생성
 
-예) tar -cvf test.tar ./* 
-```
+]# tar rvf [파일명] [묶을파일] = 기존 tar파일에 다른파일 추가로 묶기
 
-### tar.gz 압축
-```
-$ tar -cvf [FILE_NAME.tar.gz] [TARGET_FOLDER] 
+]# tar xvf [파일명] = tar파일 풀기
+
+]# tar tvf [파일명] = tar파일에 묶인 파일 확인
 ```
 
-### zip 압축
-```
-$ zip  [FILE_NAME.zip] [TARGET_FOLDER] 
-```
+# 자료참고
+- [자료참고](https://wiseworld.tistory.com/67)
 
-## 압축 풀기
-```
-$ tar -xvf [FILE_NAME.tar] 
-$ tar -zxvf [FILE_NAME.tar.gz] 
-```
 
 
