@@ -36,7 +36,7 @@ echo "stty erase ^H" >> /etc/profile
 # 추가 공부
 - stty : 터미널 설정 명령어
 - 문법) stty [설정명령] [설정할 키보드 key] 
-- 예시) 
+- 예시) stty erase ^H
 
 
 # 자료 참고
