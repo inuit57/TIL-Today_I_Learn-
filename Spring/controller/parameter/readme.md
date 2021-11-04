@@ -1,6 +1,68 @@
 # 개요 
 - Spring의 @Controller 에서 parameter 값들을 받아오는 다양한 방법들에 대해서 기술한다. 
 - [자료 출처](https://takeknowledge.tistory.com/39)
+- [자료 출처2](https://gs.saro.me/dev?tn=556)
+
+## HttpRequest로 받아오는 방법
+```
+@GetMapping("/temp")
+String temp(HttpServletRequest request)
+{
+    String a = request.getParameter("a");
+    String b = request.getParameter("b");
+    
+    System.out.println("a : " + a);
+    System.out.println("b : " + b);
+
+    return "none";
+}
+```
+```
+콘솔결과 : /temp?a=1&b=2
+a : 1
+b : 2
+```
+
+## Map으로 가져오는 방법
+```
+@GetMapping("/temp")
+String temp(@RequestParam Map<String, String> param)
+{
+    String a = param.get("a");
+    String b = param.get("b");
+
+    System.out.println("a : " + a);
+    System.out.println("b : " + b);
+
+    return "none";
+}
+```
+```
+콘솔결과 : /temp?a=1&b=2
+a : 1
+b : 2
+```
+- 자동으로 name을 key값으로 value를 value값으로 하여 Map에 저장합니다.
+
+## Model 클래스를 통한 직접 매칭 
+```
+@GetMapping("/temp")
+String temp(Abc abc)
+{
+    System.out.println("a : " + abc.getA());
+    System.out.println("b : " + abc.getB());
+    
+    return "none";
+}
+
+@Getter @Setter
+static public class Abc
+{
+    String a;
+    int b;
+}
+```
+- 자동으로 모델 클래스에 값들을  저장해줍니다. 
 
 ##  @RequestParam 활용
 ```
@@ -52,8 +114,6 @@ public class ReservationsApiController {
 - [자료출처](https://salon.tistory.com/10)
 - [추가 자료(공부필요)](https://ltk3934.tistory.com/185) 
 - [이미지 출처](https://javacoding.tistory.com/142)
-
-
 ![image](https://user-images.githubusercontent.com/24216471/140238840-d1c546b1-902f-4c9a-ad2b-bae6bf218037.png)
 
 #### @PostMapping 
@@ -75,4 +135,31 @@ public class ReservationsApiController {
 - CRUD의 D(Delete) 
 
 
+## @RequestBody 활용
+- HTTP 요청의 Body 부분을 java 객체로 받을 수 있게 해주는 어노테이션.
+- 주로 json을 받을 때 활용한다. 
 
+- json 객체의 데이터 형태와 일치하도록 java class를 만든 뒤 해당 객체를 파라미터를 담을 변수로 적어주면 고스란히 java 객체 안에 담긴다. 
+
+```
+// json 데이터
+{
+    "id" : "wisenut",
+    "uid" : 59 
+}
+
+@Getter @Setter
+public class WisenutParam{
+    private String id ; 
+    private int uid; 
+}
+
+@Controller
+@RequestMapping(path = "/api")
+public class WisenutTestController {
+ 
+    @PostMapping(path = "/wisenutParam")
+    public String setReservations(@RequestBody WisenutParam wisenutParam) {
+        //TO DO 
+    }
+```
