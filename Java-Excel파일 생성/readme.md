@@ -30,8 +30,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 - 파일 생성 부분
 ```
-	public void excelDownload(HttpServletResponse response) throws IOException {
-//      Workbook wb = new HSSFWorkbook();
+public void excelDownload(HttpServletResponse response) throws IOException {
+//    Workbook wb = new HSSFWorkbook();
       Workbook wb = new XSSFWorkbook();
       
       Sheet sheet = wb.createSheet("첫번째 시트");
@@ -67,8 +67,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
       // Excel File Output
       wb.write(response.getOutputStream());
-      
-	}
+}
 ```
 - WorkBook > Sheet > Row > Cell 순서로 작업된다고 이해하면 됩니다.
 - WorkBook은 그리고 자동으로 닫아주기 때문에 wb.close() 함수가 없습니다. 
