@@ -23,3 +23,5 @@
 ## 관련 함수 및 API
 - 일반적으로 google에서 제공해주는 gson 라이브러리를 많이 사용하는 것으로 보인다.
 - [관련자료](https://hianna.tistory.com/629)
+
+- [Gson정리](https://github.com/inuit57/TIL-Today_I_Learn-/tree/main/JSON/Gson) 
