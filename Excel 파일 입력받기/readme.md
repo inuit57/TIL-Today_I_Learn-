@@ -88,56 +88,57 @@ function put_excel(){
 
 ## Service (java) 
 ```java
-public String readExcel(MultipartFile file) throws Exception {
+	public String readExcel(MultipartFile file) throws Exception {
 		// TODO Auto-generated method stub
-	    // 엑셀파일 열기 (엑셀버전 2007 이상일때, 오픈방법)
-	    OPCPackage opcPackage = OPCPackage.open(file.getInputStream());
-	    XSSFWorkbook wb = new XSSFWorkbook(opcPackage);
+		// 엑셀파일 열기 (엑셀버전 2007 이상일때, 오픈방법)
+		OPCPackage opcPackage = OPCPackage.open(file.getInputStream());
+		XSSFWorkbook wb = new XSSFWorkbook(opcPackage);
 
-	    Map<String, String> excelMap = new HashMap<String, String>(); 
-	    String[] strArr = new String[3] ; 
-	    Gson gson = new Gson();
-	    
+		Map<String, String> excelMap = new HashMap<String, String>();
+		String[] strArr = new String[3];
+		Gson gson = new Gson();
 
-	      XSSFSheet sheet = wb.getSheetAt(0);
-	      int maxRow = sheet.getLastRowNum(); 
-	      
-	      // row
-	      for(int i =0 ; i <= maxRow ; i++) {
-	    	  Row currentRow = sheet.getRow(i); 
-	    	  
-	    	  // cell
-	    	  for( int j =0 ; j < currentRow.getLastCellNum(); j++) {
-	    		  Cell currentCell = currentRow.getCell(j);
-	    		  if ( currentCell != null) {
-		    		  if(currentCell.getCellType() == Cell.CELL_TYPE_STRING) {
-			            	if(strArr[i] == null || "".equals(strArr[i]) ){
-			            		strArr[i] = currentCell.getStringCellValue() ; 
-			            	}else {
-			            		strArr[i] += (","+ currentCell.getStringCellValue()) ;
-			            	}
-			            	
-			          }else if (currentCell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
-			            	if(strArr[i] == null || "".equals(strArr[i]) ){
-			            		strArr[i] = currentCell.getStringCellValue() ; 
-			            	}else {
-			            		strArr[i] += (","+ currentCell.getStringCellValue()) ;
-			            	}
-			          }else if ( currentCell.getCellType() == Cell.CELL_TYPE_BLANK) {
-			        	  System.out.print("blank\t"); 
-			          }
-	    		  }else {
-	    			  System.out.print("blank2\t");  
-	    		  }
-	    	  }
-	    	  System.out.println(); // Row를 구분해주기 위한 엔터
-	      }
-	      
-	      excelMap.put("data1", strArr[0]);
-	      excelMap.put("data2", strArr[1]); 
-	      excelMap.put("data3", strArr[2]); 
-	      
-	    return gson.toJson(excelMap); 	
-	  } 
+		XSSFSheet sheet = wb.getSheetAt(0);
+		int maxRow = sheet.getLastRowNum();
+
+		// row
+		for (int i = 0; i <= maxRow; i++) {
+			Row currentRow = sheet.getRow(i);
+
+			// cell
+			for (int j = 0; j < 3; j++) {
+				Cell currentCell = currentRow.getCell(j);
+				if (currentCell != null) {
+					if (currentCell.getCellType() == Cell.CELL_TYPE_STRING) {
+						System.out.print(currentCell.getStringCellValue() + "\t");
+						if (strArr[j] == null || "".equals(strArr[j])) {
+							strArr[j] = currentCell.getStringCellValue();
+						} else {
+							strArr[j] += ("," + currentCell.getStringCellValue());
+						}
+
+					} else if (currentCell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
+						System.out.print((int) currentCell.getNumericCellValue() + "\t");
+						if (strArr[j] == null || "".equals(strArr[j])) {
+							strArr[j] = currentCell.getStringCellValue();
+						} else {
+							strArr[j] += ("," + currentCell.getStringCellValue());
+						}
+					} else if (currentCell.getCellType() == Cell.CELL_TYPE_BLANK) {
+						System.out.print("blank\t");
+					}
+				} else {
+					System.out.print("blank2\t");
+				}
+			}
+			System.out.println(); // Row를 구분해주기 위한 엔터
+		}
+
+		excelMap.put("data1", strArr[0]);
+		excelMap.put("data2", strArr[1]);
+		excelMap.put("data3", strArr[2]);
+
+		return gson.toJson(excelMap);
+	}
 ```
 
