@@ -101,12 +101,15 @@ function put_excel(){
 		XSSFSheet sheet = wb.getSheetAt(0);
 		int maxRow = sheet.getLastRowNum();
 
+		int cellCount = 3; 
+		
 		// row
-		for (int i = 0; i <= maxRow; i++) {
+		for (int i = 1; i <= maxRow; i++) { //header 부분을 제외하려면 1부터.
 			Row currentRow = sheet.getRow(i);
 
 			// cell
-			for (int j = 0; j < 3; j++) {
+			
+			for (int j = 0; j < cellCount ; j++) {
 				Cell currentCell = currentRow.getCell(j);
 				if (currentCell != null) {
 					if (currentCell.getCellType() == Cell.CELL_TYPE_STRING) {
