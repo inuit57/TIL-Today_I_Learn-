@@ -1,17 +1,17 @@
 # 개요
 - DBA들과 대화를 진행할 때 문제가 되지 않도록 용어를 정리한다. 
 
-# 종류
+## 종류
 - Data WareHouse (DW)
 - Data Mart (DM)
 - Data Lake (DL)
 
-## Data Warehouse
+# Data Warehouse
 - [자료참고](https://hengbokhan.tistory.com/165?category=919198)
 - 한 마디로 대량의 데이터를 분석하기 좋게 체계적으로 정리해놓은 창고이다. 
 - 당연히 분석을 위한 데이터들이므로 정제되고 가공된 데이터들이다.
 
-### 주요특징 4가지
+## 주요특징 4가지
 1) 주제지향 (Subject Oriented)
       + 정보를 이용하는 사람 관점에서 보았을 때, 업무 중심이 아닌 주제 중심으로 데이터를 조직화한다.
       + 예를 들어, 고객 거래처,상품, 활동 등의 데이터
