@@ -3,9 +3,15 @@
 - https://ldne.tistory.com/247
 
 ![image](https://user-images.githubusercontent.com/24216471/160729731-8bcbd7ec-0420-45fd-a16c-c673012c8219.png)
+서브넷 마스크 설정으로 이동
+
+
 
 ![image](https://user-images.githubusercontent.com/24216471/160729780-6dac8e8f-35d0-48d2-a50e-84e152900d17.png)
 
+
+
+보안설정 버튼을 클릭
 
 ![image](https://user-images.githubusercontent.com/24216471/160729569-7529387d-cef5-4aaa-91f6-e60a641fdd50.png)
 ![image](https://user-images.githubusercontent.com/24216471/160729629-6546368e-61f1-46e5-aad0-d1f4a76d3290.png)
