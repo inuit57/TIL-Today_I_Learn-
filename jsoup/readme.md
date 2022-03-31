@@ -13,3 +13,9 @@
 td:not(#first-child):not(.description)
 ```
 
+2) :nth-child(an+b) : 특정 번째의 자식 객체를 뽑기 좋다. 
+```
+tr td:nth-child(2n) 
+만약 td가 2개밖인 경우에는 항상 2번째 대상을 가져온다.
+```
+
