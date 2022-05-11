@@ -19,6 +19,9 @@
 3) JSONElement
     - JSONObject, JSONArray 클래스의 부모객체.
 
+## VS Code 정렬 기능 
+- json 텍스트 데이터를 .json 파일로 저장 
+- 전체 선택 후 ctrl+K , ctrl + F 순서로 눌러주면 예쁘게 정리된 데이터를 확인할 수 있습니다. 
 
 ## 관련 함수 및 API
 - 일반적으로 google에서 제공해주는 gson 라이브러리를 많이 사용하는 것으로 보인다.
