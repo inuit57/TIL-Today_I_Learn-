@@ -8,6 +8,9 @@
 
 # 자료
 - [엑셀 다운로드 Spring boot](https://velog.io/@haerong22/Spring-%EC%97%91%EC%85%80-%ED%8C%8C%EC%9D%BC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C-%ED%95%98%EA%B8%B0)
+- [배민 기술 블로그 - 엑셀 다운](https://techblog.woowahan.com/2698/)
+- [ckpoint님이 만든 엑셀 다운 라이브러리](https://github.com/ckpoint/ToExcel)
+
 
 ## 유의사항
 - 엑셀 1셀에 들어갈 수 있는 글자 수에는 제한이 있습니다. (32,767자)
