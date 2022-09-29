@@ -34,3 +34,4 @@ $> disown -h
 # 참고 자료 
 - [SSH 접속 끊어져도 프로세스 돌아가게 하기](https://umbum.dev/558) 
 - [리눅스 백그라운드 작업(ssh 연결 끊겨도) ](https://tyson.tistory.com/88)
+- [원격 접속해서 시간 오래 걸리는 작업, 접속 끊어도 계속 진행되게 하기 nohup, disown, screen](https://mytory.net/archives/2340)
