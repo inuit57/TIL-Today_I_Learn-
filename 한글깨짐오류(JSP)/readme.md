@@ -20,6 +20,8 @@
 - 해결방법 : tomcat의 server.xml 파일을 수정한다. 
  ```
   <Connector ...> 부분에  URIEncoding="utf-8" 을 추가해준다. 
+  
+  * 기본적으로 URIEncoding 설정이 되어 있지 않음.- 디볼트 값은 : ISO-8859-1 
 ```
 
 ## 참고자료
