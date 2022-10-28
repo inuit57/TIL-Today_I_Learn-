@@ -18,6 +18,7 @@ echo "sample_${today}.txt"  ## 문자열과 붙여서 사용
 - [자료 출처](https://mydb.tistory.com/217) 
 
 ### 과거
+- "-d" 옵션 뒤에 기간 정보 + ago 를 적어서 사용해준다. 
 ```sh
 date -d 'yesterday'		# 어제
 date -d '1 day ago'		# 1일전 == 어제
@@ -32,3 +33,21 @@ ate -d '30 hour ago'		# 30시간전
 date -d '3 year 7 month ago'	# 3년 7개월전
 
 ```
+
+
+### 미래 
+- 과거 옵션에서 ago만 빼면 된다. 
+```sh 
+date -d 'tomorrow'		# 내일
+date -d '1 day'			# 1일후 = 내일
+date -d '2 day'			# 2일후
+date -d '35 day'			# 20일후
+date -d '1 week'		# 1주일후
+date -d '2 month'		# 1달후
+date -d '3 year'		# 3년후
+date -d '10 second'		# 10초후
+date -d '20 minute'		# 20분후
+date -d '30 hour'		# 30시간후
+date -d '3 year 7 month'		# 3년 7개월후
+```
+
