@@ -17,7 +17,7 @@ echo "sample_${today}.txt"  ## 문자열과 붙여서 사용
 ## 오늘 외의 날짜 구하기 
 - [자료 출처](https://mydb.tistory.com/217) 
 
-### 과거
+### 과거(리눅스)
 - "-d" 옵션 뒤에 기간 정보 + ago 를 적어서 사용해준다. 
 ```sh
 date -d 'yesterday'		# 어제
@@ -31,6 +31,19 @@ date -d '10 second ago'		# 10초전
 date -d '20 minute ago'		# 20분전d
 ate -d '30 hour ago'		# 30시간전
 date -d '3 year 7 month ago'	# 3년 7개월전
+
+```
+
+### 과거(UNIX)
+- 유닉스(UNIX)는 다르게 접근해야 한다. 
+- UNIX는 Time Zone이라고 해서 지역별 시간대를 가지고 있습니다. 
+- 한국은 표준시에 대해서 TZ=KST-9 입니다. 하지만 하루전으로 가기 위해서는 24시간을 더해준답니다. 
+- [자료 출처](https://ls-altr.tistory.com/7)
+
+```sh 
+
+yesterday = `TZ=KST+15; date +%Y%m%d`
+echo ${yesterday} 
 
 ```
 
