@@ -14,3 +14,8 @@ df -h
 ```
 bdf 
 ```
+
+
+## 참고자료 
+- [UNIX bdf](https://flightsim.tistory.com/133) 
+- [리눅스 명령어 df, du](https://m.blog.naver.com/audiendo/220781455051) 
