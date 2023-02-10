@@ -20,8 +20,8 @@ server.port=8080
         app.setWebEnvironment(true);
 
         Properties props = new Properties();
-        props.put( "server.port" , "9090");  // 포트 설정 
-        props.put( "server.address" , "0.0.0.0");
+        props.put( "server.port" , "9090");  // Port 설정 
+        props.put( "server.address" , "0.0.0.0");  // IP 설정
         app.setDefaultProperties(props);
         
         // Call the run method
