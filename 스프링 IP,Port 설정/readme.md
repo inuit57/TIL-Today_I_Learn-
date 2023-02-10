@@ -12,10 +12,11 @@ server.port=8080
 ### java 에서 설정
 ```java
 (...)
+class App{
   public static void main(String[] args) throws Exception {
 
         //disabled banner, don't want to see the spring logo
-        SpringApplication app = new SpringApplication(StaticGenerator3.class);
+        SpringApplication app = new SpringApplication(App.class);
         app.setBannerMode(Banner.Mode.OFF);
         app.setWebEnvironment(true);
 
@@ -28,6 +29,7 @@ server.port=8080
         app.run(args);
 
     }
+}
 (...)
 ```
 
