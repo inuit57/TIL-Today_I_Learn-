@@ -4,3 +4,4 @@
 ## 참고자료 
 - [Thymeleaf / 인라인 자바스크립트에서 파라미터 사용](https://jolly-sally.tistory.com/14)
 - [CDATA는 왜 쓰는 것인가](https://dreamaz.tistory.com/32) 
+- [CDATA를 사용해서 모델 데이터 출력](https://kkh0977.tistory.com/1176)
